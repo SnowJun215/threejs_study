@@ -1,0 +1,64 @@
+/******* 游戏结算页 *******/
+.result-box-outer {
+    position: fixed;
+    inset: 0;
+    visibility: hidden;
+    background: rgba(0, 0, 0, .7);
+}
+.result-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    padding: 0 50px 20px;
+    margin: 0;
+    text-align: center;
+    transform: translate(-50%, -50%) scale(0);
+    background: #f5e1a8;
+    border: 0;
+    border-radius: 20% / 50%;
+    box-shadow: 0 0 60px #ffec3d;
+    opacity: 0;
+    transition: all ease-in-out .5s;
+}
+.result-box[open] {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+.result-box-title {
+    display: flex;
+    justify-content: center;
+    gap: .25em;
+    margin: 0;
+    transform: translateY(-0.5em);
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffec3d;
+    text-shadow: 0 0 1px #000;
+}
+.result-box-title > span {transform: translateY(-0.25em);}
+.result-box-title > span:first-child {transform: rotate(-35deg);}
+.result-box-title > span:last-child {transform: rotate(35deg);}
+
+/******* 结算信息 *******/
+.result-info {
+    display: inline-grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 6px 1em;
+    margin: 0;
+}
+.result-info > dt {
+    text-align: right;
+    color: #333;
+    text-align-last: justify;
+}
+.result-info > dt::after {
+    position: absolute;
+    content: '：';
+}
+.result-info > dd {
+    text-align: left;
+    margin: 0;
+    color: #7bca13;
+}
